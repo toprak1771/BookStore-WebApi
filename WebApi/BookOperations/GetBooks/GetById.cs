@@ -11,6 +11,7 @@ namespace WebApi.BookOperations.GetBooks
     public class GetById
     {
         private readonly BookStoreDbContext _dbcontext;
+        //public int BookId {get;set;}
         public GetById(BookStoreDbContext dbcontext)
         {
             _dbcontext=dbcontext;

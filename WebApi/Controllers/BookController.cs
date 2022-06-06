@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.DBOperations;
 using WebApi.BookOperations.GetBooks;
@@ -18,10 +19,12 @@ namespace WebApi.AddControllers{
     public class BookController : ControllerBase 
     {
         private readonly BookStoreDbContext _context;
+        private readonly IMapper _mapper;
 
-        public BookController(BookStoreDbContext context)
+        public BookController(BookStoreDbContext context, IMapper mapper)
         {
             _context=context;
+            _mapper=mapper;
         }
 
         
@@ -60,7 +63,7 @@ namespace WebApi.AddControllers{
          [HttpPost]
          public IActionResult AddBook([FromBody] CreateBookViewModel newBook)
          {
-             CreateBookCommand command=new CreateBookCommand(_context);
+             CreateBookCommand command=new CreateBookCommand(_context, _mapper);
              try
              {
                 command.Model=newBook;
