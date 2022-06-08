@@ -32,7 +32,7 @@ namespace WebApi.AddControllers{
         [HttpGet]
         public IActionResult Books()
         {
-            GetBooksQuery query=new GetBooksQuery(_context);
+            GetBooksQuery query=new GetBooksQuery(_context, _mapper);
             var result=query.Handle();
             return Ok(result);
         }
@@ -40,7 +40,7 @@ namespace WebApi.AddControllers{
        [HttpGet("{id}")]
        public IActionResult GetById(int id)
         {
-            GetById getById=new GetById(_context);
+            GetById getById=new GetById(_context,_mapper);
             try
             {
                var result=getById.Handle(id);

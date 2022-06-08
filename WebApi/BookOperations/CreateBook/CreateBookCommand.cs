@@ -29,10 +29,7 @@ namespace WebApi.BookOperations.CreateBook
             }
 
             book=_mapper.Map<Book>(Model);
-            // book.Title=Model.Title;
-            // book.GenreId=Model.GenreId;
-            // book.PageCount=Model.PageCount;
-            // book.PublishDate=Model.PublishDate;
+          
             _dbcontext.Books.Add(book);
             _dbcontext.SaveChanges();
         }
