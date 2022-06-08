@@ -34,3 +34,4 @@ E:\Desktop\Pratikler\BookStore\WebApi\bin\Debug\net5.0\Microsoft.Extensions.Depe
 E:\Desktop\Pratikler\BookStore\WebApi\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 E:\Desktop\Pratikler\BookStore\WebApi\bin\Debug\net5.0\AutoMapper.dll
 E:\Desktop\Pratikler\BookStore\WebApi\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\Desktop\Pratikler\BookStore\WebApi\bin\Debug\net5.0\FluentValidation.dll

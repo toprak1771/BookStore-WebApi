@@ -11,6 +11,7 @@ namespace WebApi.BookOperations.GetBooks
 {
     public class GetById
     {
+        public int BookId { get; set; }
         private readonly BookStoreDbContext _dbcontext;
         private readonly IMapper _mapper; 
         //public int BookId {get;set;}
@@ -20,9 +21,9 @@ namespace WebApi.BookOperations.GetBooks
             _mapper=mapper;
         }
 
-        public GetByIdModel Handle(int id)
+        public GetByIdModel Handle()
         {
-            var book=_dbcontext.Books.Find(id);
+            var book=_dbcontext.Books.SingleOrDefault(x=> x.Id == BookId);
             if(book==null){
                 throw new InvalidOperationException("Kitap bulunamadı.");
             }

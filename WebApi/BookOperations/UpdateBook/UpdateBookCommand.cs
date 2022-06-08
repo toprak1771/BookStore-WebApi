@@ -12,6 +12,7 @@ namespace WebApi.BookOperations.UpdateBook
     public class UpdateBookCommand
     {
         public UpdateBookViewModel Model{get;set;}
+        public int BookId { get; set; }
 
         //public int BookId {get; set;}
         private readonly BookStoreDbContext _dbcontext;
@@ -22,9 +23,9 @@ namespace WebApi.BookOperations.UpdateBook
             
         }
 
-        public void Handle(int id)
+        public void Handle()
         {
-            var book=_dbcontext.Books.Find(id);
+            var book=_dbcontext.Books.SingleOrDefault(x=>x.Id == BookId);
             if(book==null){
                 throw new InvalidOperationException("Kitap mevcut değil.");
             }
