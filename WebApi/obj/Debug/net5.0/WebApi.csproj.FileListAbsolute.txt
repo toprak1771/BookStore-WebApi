@@ -35,3 +35,4 @@ E:\Desktop\Pratikler\BookStore\WebApi\bin\Debug\net5.0\System.Diagnostics.Diagno
 E:\Desktop\Pratikler\BookStore\WebApi\bin\Debug\net5.0\AutoMapper.dll
 E:\Desktop\Pratikler\BookStore\WebApi\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 E:\Desktop\Pratikler\BookStore\WebApi\bin\Debug\net5.0\FluentValidation.dll
+E:\Desktop\Pratikler\BookStore\WebApi\bin\Debug\net5.0\Newtonsoft.Json.dll
