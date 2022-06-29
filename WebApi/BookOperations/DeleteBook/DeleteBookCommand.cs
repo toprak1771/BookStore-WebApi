@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.DBOperations;
+using WebApi.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace WebApi.BookOperations.DeleteBook
