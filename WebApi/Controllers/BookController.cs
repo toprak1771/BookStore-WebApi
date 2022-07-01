@@ -52,16 +52,10 @@ namespace WebApi.AddControllers{
             
             
         }
-
-        // [HttpGet]
-        // public Book getBooks([FromQuery] string id){
-        //     var book=BookList.Where(c=>c.Id==Convert.ToInt32(id)).SingleOrDefault();
-        //     return book;
-        // }
-
-         [HttpPost]
-         public IActionResult AddBook([FromBody] CreateBookViewModel newBook)
-         {
+     
+        [HttpPost]
+        public IActionResult AddBook([FromBody] CreateBookViewModel newBook)
+        {
 
              CreateBookCommand command=new CreateBookCommand(_context, _mapper);
              command.Model=newBook;
@@ -71,7 +65,7 @@ namespace WebApi.AddControllers{
 
              return Ok();
              
-         }
+        }
 
         [HttpPut("{id}")]
         public IActionResult UptadeBook(int id,[FromBody] UpdateBookViewModel updateBook)
