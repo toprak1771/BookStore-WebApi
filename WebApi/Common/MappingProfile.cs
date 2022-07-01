@@ -22,12 +22,16 @@ namespace WebApi.Common
             CreateMap<CreateBookViewModel, Book>();
             CreateMap<Book, GetByIdModel>()
                                             .ForMember(dest=>dest.Genre, opt=>opt.MapFrom(src=> src.Genre.Name))
+                                            .ForMember(dest=>dest.Author, opt=>opt.MapFrom(src=> src.Author.Name))
                                             .ForMember(dest=>dest.PublishDate, opt=>opt.MapFrom(src=> (src.PublishDate.Date).ToString("dd/MM/yyy")));
             CreateMap<Book, BookViewModel>()
                                             .ForMember(dest=>dest.Genre, opt=>opt.MapFrom(src=> src.Genre.Name))
+                                            .ForMember(dest=>dest.Author, opt=>opt.MapFrom(src=> src.Author.Name))
                                             .ForMember(dest=>dest.PublishDate, opt=>opt.MapFrom(src=> (src.PublishDate.Date).ToString("dd/MM/yyy")));
             
-            CreateMap<Genre, GenresViewModel>();
+            CreateMap<Genre, GenresViewModel>()
+                                            .ForMember(dest=>dest.Books, opt=>opt.MapFrom(src=> src.Books));
+                                            
 
             CreateMap<Genre, GenreDetailViewModel>();  
 

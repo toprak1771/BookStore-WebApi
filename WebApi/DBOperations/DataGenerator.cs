@@ -31,6 +31,27 @@ namespace WebApi.DBOperations
                          Name="Novel"   
                     }
                 );
+
+                context.Authors.AddRange(
+                    new Author
+                    {
+                        Name="Eric",
+                        Surname="Ries",
+                        BornDate=new DateTime(1978,10,22)
+                    },
+                      new Author
+                    {
+                        Name="Charlotte",
+                        Surname="Gilman",
+                        BornDate=new DateTime(1860,03,07)
+                    },
+                      new Author
+                    {
+                        Name="Frank",
+                        Surname="Herbet",
+                        BornDate=new DateTime(1920,11,08)
+                    }
+                );
                 
 
                 context.Books.AddRange(
@@ -40,7 +61,8 @@ namespace WebApi.DBOperations
                 Title="Learn Startup",
                 GenreId=1, //Personal Growth
                 PageCount=200,
-                PublishDate=new DateTime(2001,06,12)
+                PublishDate=new DateTime(2001,06,12),
+                AuthorId=1
                 },
                 new Book
                 {
@@ -48,21 +70,22 @@ namespace WebApi.DBOperations
                 Title="Herland",
                 GenreId=2, //Science fiction
                 PageCount=250,
-                PublishDate=new DateTime(2010,05,23)
+                PublishDate=new DateTime(2010,05,23),
+                AuthorId=2
                 },
               new Book
                 {
                 //Id=3,
                 Title="Dune",
-                GenreId=2, //Personal Fiction
+                GenreId=3, //Personal Fiction
                 PageCount=540,
-                PublishDate=new DateTime(2001,12,21)
+                PublishDate=new DateTime(2001,12,21),
+                AuthorId=3
                 }
                 );
                 context.SaveChanges();
             }
-        }
-        
+        }       
         
     }
 }
