@@ -3,7 +3,6 @@ using AutoMapper;
 using System.Linq;
 using System.Collections.Generic;
 using System;
-using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Common;
 using WebApi.Entities;
@@ -23,9 +22,9 @@ namespace WebApi.Application.GenreOperations.Queries.GetGenres
             _mapper=mapper;
         }
 
-        public async Task<List<GenresViewModel>> Handle()
+        public List<GenresViewModel> Handle()
         {
-            var genres=await _context.Genres.Include(x=> x.Books).ThenInclude(x=>x.Author).Where(x=> x.IsActive).OrderBy(x=> x.Id).ToListAsync();
+            var genres=_context.Genres.Include(x=> x.Books).ThenInclude(x=>x.Author).Where(x=> x.IsActive).OrderBy(x=> x.Id).ToList();
             List<GenresViewModel> returnList = _mapper.Map<List<GenresViewModel>>(genres);
             return returnList;
         }
@@ -38,5 +37,6 @@ namespace WebApi.Application.GenreOperations.Queries.GetGenres
         public int Id { get; set; }
         public string Name { get; set; }
         public List<Book> Books {get; set;}
+         
     }
 }

@@ -19,6 +19,7 @@ namespace WebApi.Entities
         public DateTime PublishDate { get; set; }
 
         public int AuthorId { get; set; }
+        [JsonIgnore]
         public Author Author { get; set; }
     }
 }

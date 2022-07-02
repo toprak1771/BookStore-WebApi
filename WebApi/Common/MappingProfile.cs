@@ -5,13 +5,14 @@ using WebApi.BookOperations.GetBooks;
 using WebApi.Application.GenreOperations.Queries.GetGenres;
 using WebApi.Application.GenreOperations.Queries.GetGenreDetail;
 using WebApi.Application.GenreOperations.Commands.UpdateGenre;
+using WebApi.Application.AuthorOperations.Queries.GetAuthors;
 using static WebApi.Application.GenreOperations.Queries.GetGenres.GetGenresQuery;
 using static WebApi.Application.GenreOperations.Queries.GetGenreDetail.GetGenreDetailQuery;
 using static WebApi.Application.GenreOperations.Commands.UpdateGenre.UpdateGenreCommand;
 using static WebApi.BookOperations.CreateBook.CreateBookCommand;
 using static WebApi.BookOperations.GetBooks.GetById;
 using static WebApi.BookOperations.GetBooks.GetBooksQuery;
-
+using static WebApi.Application.AuthorOperations.Queries.GetAuthors.GetAuthorsQuery;
 
 namespace WebApi.Common
 {
@@ -32,9 +33,13 @@ namespace WebApi.Common
             CreateMap<Genre, GenresViewModel>()
                                             .ForMember(dest=>dest.Books, opt=>opt.MapFrom(src=> src.Books));
                                             
+                                            
 
-            CreateMap<Genre, GenreDetailViewModel>();  
-
+            CreateMap<Genre, GenreDetailViewModel>()
+                                            .ForMember(dest=>dest.Books, opt=>opt.MapFrom(src=> src.Books));
+                                              
+            CreateMap<Author, AuthorsViewModel>();
+                                            
                                           
 
                                             

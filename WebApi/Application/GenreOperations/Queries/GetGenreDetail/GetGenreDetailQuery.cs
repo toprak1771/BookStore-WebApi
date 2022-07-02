@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Common;
+using WebApi.Entities;
 
 namespace WebApi.Application.GenreOperations.Queries.GetGenreDetail
 {
@@ -23,7 +24,7 @@ namespace WebApi.Application.GenreOperations.Queries.GetGenreDetail
 
         public GenreDetailViewModel Handle()
         {
-            var genre=_context.Genres.Where(x=> x.IsActive && x.Id==GenreId).SingleOrDefault();
+            var genre=_context.Genres.Include(x=>x.Books).ThenInclude(a=> a.Author).Where(x=> x.IsActive && x.Id==GenreId).SingleOrDefault();
             if(genre is null)
             {
                 throw new InvalidOperationException("Kitap türü bulunamadı.");
@@ -37,6 +38,8 @@ namespace WebApi.Application.GenreOperations.Queries.GetGenreDetail
     public class GenreDetailViewModel
     {
         public int Id { get; set; }
-        public string Name { get; set; }  
+        public string Name { get; set; }
+        public List<Book> Books {get; set;}
+          
     }
 }
