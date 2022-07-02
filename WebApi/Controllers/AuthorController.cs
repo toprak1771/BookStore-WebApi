@@ -6,6 +6,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.DBOperations;
 using WebApi.Application.AuthorOperations.Queries.GetAuthors;
+using WebApi.Application.AuthorOperations.Queries.GetAuthorDetail;
 
 namespace WebApi.AddControllers
 {
@@ -27,6 +28,17 @@ namespace WebApi.AddControllers
         public IActionResult Authors()
         {
             GetAuthorsQuery query = new GetAuthorsQuery(_context,_mapper);
+            return Ok(query.Handle());
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetAuthorDetail(int id)
+        {
+            GetAuthorDetailQuery query=new GetAuthorDetailQuery(_context,_mapper);
+            GetAuthorDetailQueryValidator validator= new GetAuthorDetailQueryValidator();
+
+            query.AuthorId=id;
+            validator.ValidateAndThrow(query);
             return Ok(query.Handle());
         }
     }
