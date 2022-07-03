@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 using WebApi.DBOperations;
 using WebApi.Application.AuthorOperations.Queries.GetAuthors;
 using WebApi.Application.AuthorOperations.Queries.GetAuthorDetail;
+using WebApi.Application.AuthorOperations.Commands.UpdateAuthor;
+using static WebApi.Application.AuthorOperations.Commands.UpdateAuthor.UpdateAuthorCommand;
+
+
 
 namespace WebApi.AddControllers
 {
@@ -41,6 +45,21 @@ namespace WebApi.AddControllers
             validator.ValidateAndThrow(query);
             return Ok(query.Handle());
         }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateAuthor(int id, [FromBody] UpdateAuthorCommandViewModel _updateAuthor)
+        {
+            UpdateAuthorCommand command = new UpdateAuthorCommand(_context);
+            UpdateAuthorCommandValidator validator= new UpdateAuthorCommandValidator();
+
+            command.AuthorId=id;
+            command.Model=_updateAuthor;
+            validator.ValidateAndThrow(command);
+            command.Handle();
+            return Ok();
+        }
+
+      
     }
 
 }

@@ -15,6 +15,7 @@ using static WebApi.BookOperations.GetBooks.GetById;
 using static WebApi.BookOperations.GetBooks.GetBooksQuery;
 using static WebApi.Application.AuthorOperations.Queries.GetAuthors.GetAuthorsQuery;
 
+
 namespace WebApi.Common
 {
     public class MappingProfile : Profile
@@ -39,8 +40,14 @@ namespace WebApi.Common
             CreateMap<Genre, GenreDetailViewModel>()
                                             .ForMember(dest=>dest.Books, opt=>opt.MapFrom(src=> src.Books));
                                               
-            CreateMap<Author, AuthorsViewModel>();
-            CreateMap<Author, AuthorDetailViewModel>();                              
+            CreateMap<Author, AuthorsViewModel>()
+                                            .ForMember(dest=>dest.BornDate, opt=>opt.MapFrom(src=> (src.BornDate.Date).ToString("dd/mm/yyy")));
+
+            CreateMap<Author, AuthorDetailViewModel>()
+                                            .ForMember(dest=>dest.BornDate, opt=>opt.MapFrom(src=> (src.BornDate.Date).ToString("dd/mm/yyy")));
+
+            
+
                                           
 
                                             
