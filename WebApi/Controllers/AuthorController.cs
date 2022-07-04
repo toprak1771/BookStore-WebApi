@@ -8,8 +8,10 @@ using WebApi.DBOperations;
 using WebApi.Application.AuthorOperations.Queries.GetAuthors;
 using WebApi.Application.AuthorOperations.Queries.GetAuthorDetail;
 using WebApi.Application.AuthorOperations.Commands.UpdateAuthor;
+using WebApi.Application.AuthorOperations.Commands.DeleteAuthor;
+using WebApi.Application.AuthorOperations.Commands.CreateAuthor;
 using static WebApi.Application.AuthorOperations.Commands.UpdateAuthor.UpdateAuthorCommand;
-
+using static WebApi.Application.AuthorOperations.Commands.CreateAuthor.CreateAuthorCommand;
 
 
 namespace WebApi.AddControllers
@@ -59,6 +61,30 @@ namespace WebApi.AddControllers
             return Ok();
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult DeleteAuthor(int id)
+        {
+            DeleteAuthorCommand command = new DeleteAuthorCommand(_context);
+            DeleteAuthorCommandValidator validator = new DeleteAuthorCommandValidator();
+
+            command.AuthorId=id;
+            validator.ValidateAndThrow(command);
+            command.Handle();
+            return Ok();
+        }
+
+
+        [HttpPost]
+        public IActionResult AddAuthor([FromBody] CreateAuthorViewModel _newAuthor)
+        {
+            CreateAuthorCommand command = new CreateAuthorCommand(_context, _mapper);
+            CreateAuthorCommandValidator validator = new CreateAuthorCommandValidator();
+
+            command.Model=_newAuthor;
+            validator.ValidateAndThrow(command);
+            command.Handle();
+            return Ok();
+        }
       
     }
 

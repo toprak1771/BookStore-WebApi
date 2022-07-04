@@ -7,6 +7,7 @@ using WebApi.Application.GenreOperations.Queries.GetGenreDetail;
 using WebApi.Application.GenreOperations.Commands.UpdateGenre;
 using WebApi.Application.AuthorOperations.Queries.GetAuthors;
 using WebApi.Application.AuthorOperations.Queries.GetAuthorDetail;
+using WebApi.Application.AuthorOperations.Commands.CreateAuthor;
 using static WebApi.Application.GenreOperations.Queries.GetGenres.GetGenresQuery;
 using static WebApi.Application.GenreOperations.Queries.GetGenreDetail.GetGenreDetailQuery;
 using static WebApi.Application.GenreOperations.Commands.UpdateGenre.UpdateGenreCommand;
@@ -14,7 +15,7 @@ using static WebApi.BookOperations.CreateBook.CreateBookCommand;
 using static WebApi.BookOperations.GetBooks.GetById;
 using static WebApi.BookOperations.GetBooks.GetBooksQuery;
 using static WebApi.Application.AuthorOperations.Queries.GetAuthors.GetAuthorsQuery;
-
+using static WebApi.Application.AuthorOperations.Commands.CreateAuthor.CreateAuthorCommand;
 
 namespace WebApi.Common
 {
@@ -46,7 +47,7 @@ namespace WebApi.Common
             CreateMap<Author, AuthorDetailViewModel>()
                                             .ForMember(dest=>dest.BornDate, opt=>opt.MapFrom(src=> (src.BornDate.Date).ToString("dd/mm/yyy")));
 
-            
+            CreateMap<CreateAuthorViewModel, Author>();
 
                                           
 

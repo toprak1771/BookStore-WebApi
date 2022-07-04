@@ -41,6 +41,7 @@ namespace WebApi.BookOperations.UpdateBook
 
         public class UpdateBookViewModel
         {
+            
             public string Title { get; set; }
             public int GenreId { get; set; }
             public int PageCount { get; set; }

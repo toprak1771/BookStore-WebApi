@@ -35,6 +35,7 @@ namespace WebApi.BookOperations.GetBooks
 
         public class GetByIdModel
         {
+            public int Id { get; set; }
             public string Title { get; set; }
             public int PageCount { get; set; }
             public string PublishDate { get; set; }
