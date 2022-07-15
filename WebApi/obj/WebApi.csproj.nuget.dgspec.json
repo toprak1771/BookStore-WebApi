@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Desktop\\Pratikler\\BookStore\\WebApi\\WebApi.csproj": {}
+    "e:\\Desktop\\Pratikler\\BookStore\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "E:\\Desktop\\Pratikler\\BookStore\\WebApi\\WebApi.csproj": {
+    "e:\\Desktop\\Pratikler\\BookStore\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Desktop\\Pratikler\\BookStore\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "e:\\Desktop\\Pratikler\\BookStore\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "E:\\Desktop\\Pratikler\\BookStore\\WebApi\\WebApi.csproj",
+        "projectPath": "e:\\Desktop\\Pratikler\\BookStore\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\topra\\.nuget\\packages\\",
-        "outputPath": "E:\\Desktop\\Pratikler\\BookStore\\WebApi\\obj\\",
+        "outputPath": "e:\\Desktop\\Pratikler\\BookStore\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

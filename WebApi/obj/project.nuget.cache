@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J0OLj4J9Zl1aaJdka2WvxmGNcodVK6mJkSL8HioQZlOIjjwJUZS+c9Jky+ZC32NafAEcZi0Uqnt1FFnGcJgE4w==",
+  "dgSpecHash": "xZbZob0pGMMqMLvrrcb5mhWulHhXz/3PsjFAssxWVrOh2F7bVvnjygaUwWmwY2sS8MftzK7AakhLwDqeI6soNQ==",
   "success": true,
-  "projectFilePath": "E:\\Desktop\\Pratikler\\BookStore\\WebApi\\WebApi.csproj",
+  "projectFilePath": "e:\\Desktop\\Pratikler\\BookStore\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\topra\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\topra\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
