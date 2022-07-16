@@ -7,6 +7,7 @@ using WebApi.BookOperations.CreateBook;
 using FluentAssertions;
 using static WebApi.BookOperations.CreateBook.CreateBookCommand;
 using System;
+using System.Linq;
 
 namespace Application.BookOperations.Commands.CreateBook
 {
@@ -37,6 +38,25 @@ namespace Application.BookOperations.Commands.CreateBook
             FluentActions
                 .Invoking(() => command.Handle())
                 .Should().Throw<InvalidOperationException>().And.Message.Should().Be("Kitap zaten mevcut.");
+         }
+
+         [Fact]
+         public void WhenValidInputsAreGiven_Book_ShouldBeCreated()
+         {
+            //arrange
+            CreateBookCommand command = new CreateBookCommand(_dbcontext,_mapper);
+            CreateBookViewModel model=new CreateBookViewModel() {Title = "Hobbit", PageCount=1000, PublishDate=DateTime.Now.Date.AddYears(-10), GenreId=1};
+            command.Model=model;
+            
+            //act (Should ile kontrol etmezsen otomatik çalışmaz, invoke metodu ile çalıştırman lazım.)
+            FluentActions.Invoking(()=> command.Handle()).Invoke();
+            
+            //assert
+            var book=_dbcontext.Books.SingleOrDefault(book=> book.Title == model.Title);
+            book.Should().NotBeNull();
+            book.PageCount.Should().Be(model.PageCount);
+            book.PublishDate.Should().Be(model.PublishDate);
+            book.GenreId.Should().Be(model.GenreId);
          }
     }
 }

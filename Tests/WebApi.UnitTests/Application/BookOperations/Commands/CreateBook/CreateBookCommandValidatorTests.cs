@@ -61,5 +61,24 @@ namespace Application.BookOperations.Commands.CreateBook
             result.Errors.Count.Should().BeGreaterThan(0);
 
         }
+
+         [Fact]
+        public void WhenValidInputsAreGiven_Validator_ShouldNotBeReturnError()
+        {
+            CreateBookCommand command = new CreateBookCommand(null,null);
+            command.Model=new CreateBookViewModel()
+            {
+                Title="Lord of The Rings",
+                PageCount = 100,
+                PublishDate = DateTime.Now.Date.AddYears(-2),
+                GenreId=1
+            };
+
+            CreateBookValidator validator = new CreateBookValidator();
+            var result =validator.Validate(command);
+
+            result.Errors.Count.Should().Be(0);
+
+        }
     }
 }
