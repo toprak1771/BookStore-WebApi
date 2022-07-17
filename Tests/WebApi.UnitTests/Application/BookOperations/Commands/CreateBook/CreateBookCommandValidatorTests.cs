@@ -62,8 +62,8 @@ namespace Application.BookOperations.Commands.CreateBook
 
         }
 
-         [Fact]
-        public void WhenValidInputsAreGiven_Validator_ShouldNotBeReturnError()
+        [Fact]
+        public void WhenValidInputsAreGiven_Validator_ShouldNotReturnError()
         {
             CreateBookCommand command = new CreateBookCommand(null,null);
             command.Model=new CreateBookViewModel()
