@@ -27,7 +27,7 @@ namespace Application.BookOperations.Commands.CreateBook
          public void WhenAlreadyExistBookTitleIsGiven_InvalidOperationException_ShouldBeReturn()
          {
             //arrange
-            var book = new Book() { Title="Test_WhenAlreadyExistBookTitleIsGiven_InvalidOperationException_ShouldBeReturn", PageCount = 100, PublishDate = new System.DateTime(1990,03,17), GenreId = 1};
+            var book = new Book() { Title="Test_WhenAlreadyExistBookTitleIsGiven_InvalidOperationException_ShouldBeReturn", PageCount = 100, PublishDate = new System.DateTime(1990,03,17), GenreId = 1,AuthorId=1};
             _dbcontext.Books.Add(book);
             _dbcontext.SaveChanges();
 
@@ -45,7 +45,7 @@ namespace Application.BookOperations.Commands.CreateBook
          {
             //arrange
             CreateBookCommand command = new CreateBookCommand(_dbcontext,_mapper);
-            CreateBookViewModel model=new CreateBookViewModel() {Title = "Hobbit", PageCount=1000, PublishDate=DateTime.Now.Date.AddYears(-10), GenreId=1};
+            CreateBookViewModel model=new CreateBookViewModel() {Title = "Hobbit", PageCount=1000, PublishDate=DateTime.Now.Date.AddYears(-10), GenreId=1, AuthorId=1};
             command.Model=model;
             
             //act (Should ile kontrol etmezsen otomatik çalışmaz, invoke metodu ile çalıştırman lazım.)
@@ -57,6 +57,7 @@ namespace Application.BookOperations.Commands.CreateBook
             book.PageCount.Should().Be(model.PageCount);
             book.PublishDate.Should().Be(model.PublishDate);
             book.GenreId.Should().Be(model.GenreId);
+            book.AuthorId.Should().Be(model.AuthorId);
          }
     }
 }
