@@ -37,7 +37,7 @@ namespace Application.BookOperations.Commands.DeleteBook
             DeleteBookValidator validator = new DeleteBookValidator();
             var result = validator.Validate(command);
 
-            result.Errors.Count.Should().Be(0);
+            result.Errors.Count.Should().Be(0); 
         }
     }
 }
