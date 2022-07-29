@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using FluentValidation;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.DBOperations;
 using WebApi.BookOperations.GetBooks;
@@ -15,6 +16,7 @@ using static WebApi.BookOperations.CreateBook.CreateBookCommand;
 
 namespace WebApi.AddControllers{
 
+    [Authorize]
     [ApiController]
     [Route("[controller]s")]
     public class BookController : ControllerBase 

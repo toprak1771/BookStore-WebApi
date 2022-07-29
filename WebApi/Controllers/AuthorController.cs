@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using FluentValidation;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.DBOperations;
 using WebApi.Application.AuthorOperations.Queries.GetAuthors;
@@ -16,6 +17,7 @@ using static WebApi.Application.AuthorOperations.Commands.CreateAuthor.CreateAut
 
 namespace WebApi.AddControllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]s")]
 

@@ -125,3 +125,10 @@ E:\Desktop\Pratikler\BookStore\Tests\WebApi.UnitTests\obj\Debug\net5.0\WebApi.Un
 E:\Desktop\Pratikler\BookStore\Tests\WebApi.UnitTests\obj\Debug\net5.0\ref\WebApi.UnitTests.dll
 E:\Desktop\Pratikler\BookStore\Tests\WebApi.UnitTests\obj\Debug\net5.0\WebApi.UnitTests.pdb
 E:\Desktop\Pratikler\BookStore\Tests\WebApi.UnitTests\obj\Debug\net5.0\WebApi.UnitTests.genruntimeconfig.cache
+E:\Desktop\Pratikler\BookStore\Tests\WebApi.UnitTests\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Desktop\Pratikler\BookStore\Tests\WebApi.UnitTests\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Desktop\Pratikler\BookStore\Tests\WebApi.UnitTests\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+E:\Desktop\Pratikler\BookStore\Tests\WebApi.UnitTests\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+E:\Desktop\Pratikler\BookStore\Tests\WebApi.UnitTests\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Desktop\Pratikler\BookStore\Tests\WebApi.UnitTests\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+E:\Desktop\Pratikler\BookStore\Tests\WebApi.UnitTests\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
